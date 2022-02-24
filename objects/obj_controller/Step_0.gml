@@ -1,9 +1,12 @@
 /// @description 
 //Track Player Health and X Bombs
-var hp = obj_player.hp
-var xBomb = obj_player;
+if (instance_exists(obj_player)) {
+	var hp = obj_player.hp;
+	var xBomb = obj_player;
 
-if(obj_player.hp > hp) obj_player.hp = hp;
+	if(obj_player.hp > hp) obj_player.hp = hp;
+
+}
 
 
 // Gameover if no more enemies.
@@ -13,7 +16,7 @@ var cam_h = camera_get_view_height(cam)
 if (!instance_exists(obj_enemy) || !instance_exists(obj_player)) {
 	if (room_exists(room_next(room))) {
 		room_goto_next();
-		global.game_state = states.playing
+		global.game_state = states.playing;
 		
 	} else {
 		global.game_state = states.gameover;

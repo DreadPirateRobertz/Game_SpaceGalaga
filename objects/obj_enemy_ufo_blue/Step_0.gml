@@ -6,11 +6,11 @@ if (hp <= 0) {
 }
 if(instance_exists(obj_player)) image_angle = point_direction(x, y, obj_player.x, obj_player.y);
 
-if(global.game_state != states.playing) {	
-	path_speed = 0;
+if(global.game_state != states.playing) {	//This makes no sense but it's being weird
+	path_speed = spd;
 }
 //else {
-//	path_speed = spd;	
+//	path_speed = 0;	
 //}
 
 //Cannot get path speed to resume normally here

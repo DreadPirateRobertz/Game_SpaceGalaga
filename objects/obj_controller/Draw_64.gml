@@ -61,3 +61,12 @@ repeat(xBomb){
 		draw_sprite(spr_bullet_player, 0, xB, 750);
 		xB += 30;
 }
+
+// Player health.
+if (instance_exists(obj_player)) {
+	var xhp = 30;
+	repeat(obj_player.hp) {
+		draw_sprite(spr_life, 0, xhp, 750);
+		xhp += 30
+	}
+}
